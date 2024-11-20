@@ -67,6 +67,5 @@ export default function Page () {
         </TableBody>
       </Table>
     </main>
-
   )
 }
