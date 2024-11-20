@@ -1,14 +1,24 @@
+import { sql } from 'drizzle-orm';
+
+import { db } from '@/db';
+
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
-export default function Page () {
+export default async function Page () {
+
+  const results = await db.execute(sql`SELECT current_database()`);
+
   return (
     <main className='flex flex-col h-screen gap-6 max-w-5xl mx-auto my-12'>
       <div className="flex justify-between">
         <h1 className="mt-3 text-3xl font-bold">Create Invoice</h1>
       </div>
+
+
+      {JSON.stringify(results)}
 
       <form className="grid gap-4 max-w-xs">
         <div>
