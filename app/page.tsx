@@ -1,14 +1,17 @@
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <main className='max-w-5xl mx-auto'>
+    <main className='flex flex-col justify-center items-center h-screen text-center gap-6 max-w-5xl mx-auto'>
       <h1 className='text-5xl font-bold'>
         Paytrack
       </h1>
-      <Link href='/dashboard'>
-        Sign in
-      </Link>
+      <p>
+        <Button asChild>
+          <Link href="/dashboard">Login</Link>
+        </Button>
+      </p>
     </main>
   );
 }
